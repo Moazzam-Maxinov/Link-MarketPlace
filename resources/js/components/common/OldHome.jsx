@@ -85,6 +85,108 @@ const OldHome = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Plan Section */}
+            <section
+                className="relative bg-cover bg-center py-8 md:py-20 text-white"
+                style={{ backgroundImage: 'url("./images/mountain-bg.jpg")' }}
+            >
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+                <div className="container mx-auto px-6 lg:px-10 flex flex-col md:flex-row gap-20 md:gap-32 z-10 relative">
+                    {/* Left Content */}
+                    <div className="w-full md:w-[45%] space-y-10">
+                        <h2 className="text-3xl sm:text-5xl font-semibold">
+                            GetSEOLinks
+                        </h2>
+                        <p className="text-lg sm:text-xl text-white font-light opacity-75">
+                            Fully custom link building campaigns delivered by
+                            GetSEOLinks' experts
+                        </p>
+                        <a
+                            href="#"
+                            className="bg-white/10 hover:bg-white/20 text-white text-base font-medium py-3 px-6 rounded-lg transition duration-300 inline-flex justify-center items-center gap-2"
+                        >
+                            Learn More <MoveRight />
+                        </a>
+
+                        <div className="items-start grid grid-cols-1 md:grid-cols-2 gap-y-8 mt-12 max-lg:!gap-y-12 gap-x-6 sm:gap-x-8 md:gap-x-16 max-lg:grid-cols-2">
+                            <div className="space-y-8">
+                                <span className="text-primary-light">
+                                    <ChartNoAxesColumn size={32} />
+                                </span>
+                                <p className="text-white font-light text-base opacity-75">
+                                    A fully comprehensive competitor link
+                                    analysis required to rank.
+                                </p>
+                            </div>
+
+                            <div className="space-y-8">
+                                <span className="text-primary-light">
+                                    <Link2 size={32} />
+                                </span>
+                                <p className="text-white font-light text-base opacity-75">
+                                    An exact anchor text road map for your
+                                    backlinks.
+                                </p>
+                            </div>
+
+                            <div className="space-y-8">
+                                <span className="text-primary-light">
+                                    <BadgeDollarSign size={32} />
+                                </span>
+                                <p className="text-white font-light text-base opacity-75">
+                                    Discounts on hand-selected links.
+                                </p>
+                            </div>
+
+                            <div className="space-y-8">
+                                <span className="text-primary-light">
+                                    <CalendarCheck size={32} />
+                                </span>
+                                <p className="text-white font-light text-base opacity-75">
+                                    Fully transparent month-to-month reporting.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right Side Graphics */}
+                    <div className="w-full md:w-[55%]">
+                        <img src="./images/hero_process.png" alt="" />
+                    </div>
+                </div>
+            </section>
+
+            {/* Testimonial Section */}
+            <section className="py-16 bg-white">
+                <div className="container mx-auto px-6 lg:px-10">
+                    <div className="bg-[#d4f4a3] rounded-lg py-16 px-8">
+                        <div className="flex items-center justify-center gap-5 max-w-3xl relative mx-auto">
+                            <span className="text-primary-dark font-bold rotate-180 self-start">
+                                <Quote size={50} />
+                            </span>
+                            <p className="text-primary-dark text-xl sm:text-3xl !leading-relaxed text-center">
+                                GetSEOLinks is a{" "}
+                                <span className="font-bold">
+                                    perfect solution
+                                </span>{" "}
+                                for anyone needing to scale up their outreach.
+                                These are quality guest posts on real sites that
+                                I'm actually proud to show my clients.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="mt-6 flex flex-col items-end gap-2">
+                        <span className="text-xl font-bold leading-[1em] text-primary-dark">
+                            Ryan Stewart
+                        </span>
+                        <span className="text-primary text-lg leading-[1em] font-medium">
+                            Webris
+                        </span>
+                    </div>
+                </div>
+            </section>
         </>
     );
 };
