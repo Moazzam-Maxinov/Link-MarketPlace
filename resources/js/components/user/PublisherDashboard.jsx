@@ -49,8 +49,8 @@ const PublisherDashboard = () => {
             textColor: "text-purple-500",
         },
         {
-            title: "Pending Orders",
-            value: data.pending_orders,
+            title: "Inprogress Orders",
+            value: data.inprogress_orders,
             icon: Clock,
             color: "bg-orange-500",
             textColor: "text-orange-500",

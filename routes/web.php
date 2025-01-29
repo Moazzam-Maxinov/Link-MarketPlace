@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\PublisherServiceController;
+use App\Http\Controllers\User\VendorServiceController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\CounterController;
 use App\Http\Controllers\HomeController;
@@ -60,6 +61,8 @@ Route::middleware(['auth', 'role:1'])->group(function () {
 Route::middleware(['auth', 'role:0'])->group(function () {
     Route::get('/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
     Route::get('/publisher/orders/new', [PublisherServiceController::class, 'newPublisherOrders'])->name('user.publisher-new-orders');
+    Route::get('/publisher/orders', [PublisherServiceController::class, 'allPublisherOrders'])->name('user.publisher-all-orders');
+    Route::get('/websites', [VendorServiceController::class, 'allWebsites'])->name('user.allWebsites');
     Route::get('/change-password', [UserController::class, 'showChangePasswordForm'])->name('user.change-password');
     Route::put('/change-password', [UserController::class, 'changePassword'])->name('user.update-password');
 
@@ -67,6 +70,9 @@ Route::middleware(['auth', 'role:0'])->group(function () {
     Route::post('/api/switch-role', [UserController::class, 'switchRole'])->name('user.switchRole');
     Route::get('/api/publisher-data', [UserController::class, 'getPublisherDashbordData'])->name('user.getPublisherDashbordData');
     Route::get('/api/publisher/orders/new', [PublisherServiceController::class, 'getNewPublisherOrders'])->name('getNewPublisherOrders');
+    Route::get('/api/publisher/orders', [PublisherServiceController::class, 'getAllPublisherOrders'])->name('getAllPublisherOrders');
+    Route::get('/api/getAllWebsites', [VendorServiceController::class, 'getAllWebsites'])->name('getAllWebsites');
+    Route::get('/api/getAllCategories', [VendorServiceController::class, 'getAllCategories'])->name('getAllCategories');
     // Add other user routes here...
 });
 

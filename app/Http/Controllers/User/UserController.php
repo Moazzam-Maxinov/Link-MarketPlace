@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\CustomerRole;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
+use App\Models\PublisherOrder;
 
 class UserController extends Controller
 {
@@ -92,11 +93,27 @@ class UserController extends Controller
 
     public function getPublisherDashbordData()
     {
+        $userId = Auth::id(); // Get the authenticated user's ID
+
+        $pendingOrderCount = PublisherOrder::where('ordered_to', $userId)
+            ->where('status', 'pending')
+            ->count();
+
+        $totalOrderCount = PublisherOrder::where('ordered_to', $userId)->count();
+
+        $totalCompletedSum = PublisherOrder::where('ordered_to', $userId)
+            ->where('status', 'completed')
+            ->sum('price');
+
+        $inPprogressOrderCount = PublisherOrder::where('ordered_to', $userId)
+            ->where('status', 'inprogress')
+            ->count();
+
         $data = [
-            'total_orders' => 245,
-            'new_orders' => 12,
-            'total_amount_spent' => 3240.0,
-            'pending_orders' => 8,
+            'total_orders' =>  $totalOrderCount,
+            'new_orders' => $pendingOrderCount,
+            'total_amount_spent' => $totalCompletedSum,
+            'inprogress_orders' => $inPprogressOrderCount,
         ];
 
         return response()->json($data);
