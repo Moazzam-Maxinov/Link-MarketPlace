@@ -2,14 +2,29 @@ import {
     BriefcaseBusiness,
     Check,
     Clock4,
+    Facebook,
     Filter,
+    Globe,
+    Instagram,
+    Link,
+    Linkedin,
+    Mail,
     MoveRight,
+    Phone,
     ThumbsUp,
+    Twitter,
+    Youtube,
 } from "lucide-react";
 import ReactDOM from "react-dom/client";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import PricingTab from "./PricingTab";
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "../ui/accordion";
 
 const Home = () => {
     return (
@@ -319,6 +334,140 @@ const Home = () => {
                                 results!
                             </p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* FAQs Section */}
+            <section className="bg-BG1 py-12 md:py-20 space-y-16 md:space-y-20">
+                <div className="container mx-auto px-6 lg:px-10">
+                    {/* Title */}
+                    <div className="text-center">
+                        <h2 className="text-4xl md:text-6xl font-bold text-primary-dark leading-tight">
+                            <span className="text-primary text-2xl md:text-4xl">
+                                Questions
+                            </span>
+                            <br /> You Might Want to Ask Us
+                        </h2>
+                    </div>
+                    <div className="mt-12 sm:mt-20 max-w-4xl mx-auto">
+                        <Accordion
+                            type="multiple"
+                            collapsible
+                            className="w-full space-y-5"
+                        >
+                            <AccordionItem
+                                value="item-1"
+                                className="border bg-white border-primary-dark/20 rounded-lg py-4 sm:py-6 px-4 sm:px-6 space-y-6"
+                            >
+                                <AccordionTrigger className="p-0 text-2xl font-bold hover:no-underline text-primary-dark text-left gap-x-3 [&>svg]:w-8 [&>svg]:h-8 [&>svg]:rounded-full [&>svg]:bg-primary [&>svg]:text-white">
+                                    How much time does it take to rank in
+                                    Google's Top 10?
+                                </AccordionTrigger>
+                                <AccordionContent className="p-0 text-primary-neutral text-lg">
+                                    The time frame varies based on how
+                                    competitive your niche is and the number of
+                                    quality backlinks needed to surpass your
+                                    competitors.
+                                </AccordionContent>
+                            </AccordionItem>
+
+                            <AccordionItem
+                                value="item-2"
+                                className="border bg-white border-primary-dark/20 rounded-lg py-4 sm:py-6 px-4 sm:px-6 space-y-6"
+                            >
+                                <AccordionTrigger className="p-0 text-2xl font-bold hover:no-underline text-primary-dark text-left gap-x-3 [&>svg]:w-8 [&>svg]:h-8 [&>svg]:rounded-full [&>svg]:bg-primary [&>svg]:text-white">
+                                    What are your link prices, and how can I
+                                    view them?
+                                </AccordionTrigger>
+                                <AccordionContent className="p-0 text-primary-neutral text-lg">
+                                    The cost of links varies widely, starting as
+                                    low as $0.01 and going up indefinitely.
+                                    Pricing depends on several factors and is
+                                    determined by publishers rather than our
+                                    backlink service. After signing up and
+                                    logging in, you’ll find that we offer only
+                                    high-quality backlinks. To view the most
+                                    affordable options, create an account, log
+                                    in at{" "}
+                                    <a
+                                        href="https://getseolinks.com/login/"
+                                        className="text-primary underline"
+                                    >
+                                        https://getseolinks.com/login/
+                                    </a>
+                                    , and sort the list by price by clicking on
+                                    the 'Cost' column.
+                                </AccordionContent>
+                            </AccordionItem>
+
+                            <AccordionItem
+                                value="item-3"
+                                className="bg-white border border-primary-dark/20 rounded-lg py-4 sm:py-6 px-4 sm:px-6 space-y-6"
+                            >
+                                <AccordionTrigger className="p-0 text-2xl font-bold hover:no-underline text-primary-dark text-left gap-x-3 [&>svg]:w-8 [&>svg]:h-8 [&>svg]:rounded-full [&>svg]:bg-primary [&>svg]:text-white">
+                                    How can we assist you?
+                                </AccordionTrigger>
+                                <AccordionContent className="p-0 text-primary-neutral text-lg">
+                                    We can help increase your website’s traffic
+                                    and sales by improving its ranking on Google
+                                    and other search engines. A higher position
+                                    means more visitors and potential customers
+                                    finding your site. Our approach involves
+                                    creating high-quality backlinks with
+                                    DA40-DA60 to strengthen your online presence
+                                    and boost search visibility.
+                                </AccordionContent>
+                            </AccordionItem>
+
+                            <AccordionItem
+                                value="item-4"
+                                className="bg-white border border-primary-dark/20 rounded-lg py-4 sm:py-6 px-4 sm:px-6 space-y-6"
+                            >
+                                <AccordionTrigger className="p-0 text-2xl font-bold hover:no-underline text-primary-dark text-left gap-x-3 [&>svg]:w-8 [&>svg]:h-8 [&>svg]:rounded-full [&>svg]:bg-primary [&>svg]:text-white">
+                                    How much will it cost me to get in the Top
+                                    10 of Google?
+                                </AccordionTrigger>
+                                <AccordionContent className="p-0 text-primary-neutral text-lg">
+                                    The cost of ranking in Google's Top 10
+                                    varies based on your industry and location.
+                                    For instance, if your business operates in
+                                    Delhi or Australia, you might spend around
+                                    $50 to $200 per month. However, in highly
+                                    competitive markets like the USA, UK, or
+                                    Canada, the cost typically ranges between
+                                    $500 and $1,000 due to stronger competition.
+                                </AccordionContent>
+                            </AccordionItem>
+
+                            <AccordionItem
+                                value="item-5"
+                                className="bg-white border border-primary-dark/20 rounded-lg py-4 sm:py-6 px-4 sm:px-6 space-y-6"
+                            >
+                                <AccordionTrigger className="p-0 text-2xl font-bold hover:no-underline text-primary-dark text-left gap-x-3 [&>svg]:w-8 [&>svg]:h-8 [&>svg]:rounded-full [&>svg]:bg-primary [&>svg]:text-white">
+                                    Why are your whitehat links 10 times more
+                                    effective?
+                                </AccordionTrigger>
+                                <AccordionContent className="p-0 text-primary-neutral text-lg">
+                                    When you invest in our backlinks, you can
+                                    expect a significant improvement in your
+                                    search engine ranking. Links from
+                                    LinksManagement are 10 times more powerful
+                                    than regular links because:
+                                    <ul>
+                                        <li>
+                                            Every one of our links is surrounded
+                                            by content relevant to your site.
+                                        </li>
+                                        <li>
+                                            All our links are added manually,
+                                            ensuring they appear natural to
+                                            Google and other search engines.
+                                        </li>
+                                    </ul>
+                                </AccordionContent>
+                            </AccordionItem>
+                        </Accordion>
                     </div>
                 </div>
             </section>

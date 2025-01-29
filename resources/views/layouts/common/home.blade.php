@@ -49,7 +49,7 @@
     </main>
 
     <!-- Footer Section -->
-    {{-- @include('layouts.admin.admin-footer') --}}
+    @include('layouts.common.common-footer')
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
