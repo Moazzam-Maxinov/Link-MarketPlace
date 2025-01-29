@@ -27,12 +27,12 @@ export default {
     		colors: {
     			primary: {
     				DEFAULT: '#82b826',
-    				light: '#69ebf1',
+    				light: '#9bff00',
     				dark: '#043f2e',
     				neutral: '#525252',
-    				BG1: '#f5f9e9',
+    				BG1: '#f1f1f1',
     				BG2: '#d8f2a9',
-    				BG3: '#043f63'
+    				BG3: '#05293e'
     			}
     		},
     		keyframes: {
