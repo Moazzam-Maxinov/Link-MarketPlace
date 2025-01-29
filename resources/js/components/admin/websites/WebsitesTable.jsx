@@ -1,3 +1,5 @@
+//OldFile.jsx. Sample webistes table. DO NOT use
+
 import React from "react";
 import { useWebsites } from "./WebsitesContext";
 import { ExternalLink, Edit } from "lucide-react";
