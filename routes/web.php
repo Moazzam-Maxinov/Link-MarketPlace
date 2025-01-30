@@ -62,7 +62,11 @@ Route::middleware(['auth', 'role:0'])->group(function () {
     Route::get('/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
     Route::get('/publisher/orders/new', [PublisherServiceController::class, 'newPublisherOrders'])->name('user.publisher-new-orders');
     Route::get('/publisher/orders', [PublisherServiceController::class, 'allPublisherOrders'])->name('user.publisher-all-orders');
+    Route::get('/vendor/orders', [VendorServiceController::class, 'allVendorOrders'])->name('user.vendor-all-orders');
     Route::get('/websites', [VendorServiceController::class, 'allWebsites'])->name('user.allWebsites');
+    Route::get('/websites/buy-link', [VendorServiceController::class, 'buyLink'])->name('user.buyLink');
+    Route::post('/websites/buy-link', [VendorServiceController::class, 'placeOrder'])->name('user.placeOrder');
+    Route::get('/websites/buy-link/order-confirmation', [VendorServiceController::class, 'orderConfirmation'])->name('user.order-confirmation');
     Route::get('/change-password', [UserController::class, 'showChangePasswordForm'])->name('user.change-password');
     Route::put('/change-password', [UserController::class, 'changePassword'])->name('user.update-password');
 
@@ -71,6 +75,7 @@ Route::middleware(['auth', 'role:0'])->group(function () {
     Route::get('/api/publisher-data', [UserController::class, 'getPublisherDashbordData'])->name('user.getPublisherDashbordData');
     Route::get('/api/publisher/orders/new', [PublisherServiceController::class, 'getNewPublisherOrders'])->name('getNewPublisherOrders');
     Route::get('/api/publisher/orders', [PublisherServiceController::class, 'getAllPublisherOrders'])->name('getAllPublisherOrders');
+    Route::get('/api/vendor/orders', [VendorServiceController::class, 'getAllVendorOrders'])->name('getAllVendorOrders');
     Route::get('/api/getAllWebsites', [VendorServiceController::class, 'getAllWebsites'])->name('getAllWebsites');
     Route::get('/api/getAllCategories', [VendorServiceController::class, 'getAllCategories'])->name('getAllCategories');
     // Add other user routes here...

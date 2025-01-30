@@ -132,7 +132,7 @@ const WebsitesTable = ({ initialCategories }) => {
                         size="sm"
                         className="bg-emerald-600"
                         onClick={() =>
-                            (window.location.href = `/websites/${row.original.id}`)
+                            (window.location.href = `/websites/buy-link?site=${row.original.id}`)
                         }
                     >
                         <ShoppingCart className="w-4 h-4 mr-1" />

@@ -38,7 +38,7 @@
     </main>
 
     <!-- Footer Section -->
-    
+    <?php echo $__env->make('layouts.common.common-footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
