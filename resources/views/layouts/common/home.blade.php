@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>@yield('title', 'LinkMarket - Admin Dashboard')</title>
-    <meta name="description" content="@yield('meta_description', 'Default description for your admin dashboard')">
-    <meta name="keywords" content="@yield('meta_keywords', 'admin, dashboard, link market')">
-    <meta name="author" content="@yield('meta_author', 'Your Name or Company')">
+    <title>@yield('title', 'Write for us - Buy SEO Backlinks - GetSEOLinks')</title>
+    <meta name="description" content="@yield('meta_description', 'Write for us and buy high-quality SEO backlinks at Get SEO Links. We offer guest posts, link insertions, and SEO content writing on trusted niche sites.')">
+    {{-- <meta name="keywords" content="@yield('meta_keywords', 'admin, dashboard, link market')">
+    <meta name="author" content="@yield('meta_author', 'Your Name or Company')"> --}}
 
     <!-- Open Graph Meta Tags -->
     {{-- <meta property="og:title" content="@yield('og_title', @yield('title', 'LinkMarket - Admin Dashboard'))">
@@ -25,6 +25,12 @@
 
     <!-- Canonical URL -->
     <link rel="canonical" href="@yield('canonical_url', url()->current())">
+
+    <!--Index and Follow-->
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+    
+    <!--Google Search Console Verfication Code-->
+    <meta name="google-site-verification" content="r2Mcp80LlD4VTVVTW_u6gD3iWAlt518pJ26wsXavK88" />
 
     <!-- Fonts -->
     {{-- <link rel="preconnect" href="https://fonts.bunny.net">
@@ -44,7 +50,7 @@
     @include('layouts.common.common-header')
 
     <!-- Main Content -->
-    <main>
+    <main class="min-h-screen">
         @yield('content')
     </main>
 
