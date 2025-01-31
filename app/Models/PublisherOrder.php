@@ -9,22 +9,12 @@ class PublisherOrder extends Model
 {
     use HasFactory;
 
-    // Table name
     protected $table = 'publisher_orders';
-
-    // Primary key
     protected $primaryKey = 'id';
-
-    // Indicates if the IDs are auto-incrementing
     public $incrementing = true;
-
-    // Data type of the primary key
     protected $keyType = 'int';
-
-    // Timestamps (created_at and updated_at)
     public $timestamps = true;
 
-    // Fillable attributes for mass assignment
     protected $fillable = [
         'ordered_by',
         'ordered_to',
@@ -37,17 +27,27 @@ class PublisherOrder extends Model
         'approved_at',
         'rejected_at',
         'is_completed',
+        'published_link',
+        'payment_pending',
+        'screenshot',
+        'rejected_by_publisher_reason',
+        'vendor_status',
+        'rejected_by_vendor_reason',
+        'rejected_by_vendor_time',
+        'completed_by_publisher_at'
     ];
 
-    // Attributes to be cast to native types
     protected $casts = [
         'price' => 'decimal:2',
         'is_completed' => 'boolean',
         'approved_at' => 'datetime',
         'rejected_at' => 'datetime',
+        'payment_pending' => 'string',
+        'vendor_status' => 'string',  // Enum stored as a string in Laravel
+        'rejected_by_vendor_time' => 'datetime',
+        'completed_by_publisher_at' => 'datetime',
     ];
 
-    // Relationships
     public function orderedBy()
     {
         return $this->belongsTo(User::class, 'ordered_by');

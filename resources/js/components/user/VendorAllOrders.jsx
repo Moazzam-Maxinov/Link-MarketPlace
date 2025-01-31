@@ -97,7 +97,7 @@ const VendorAllOrders = () => {
             header: "Site Details",
             cell: ({ row }) => (
                 <div>
-                    <div className="font-medium">{row.original.site_name}</div>
+                    {/* <div className="font-medium">{row.original.site_name}</div> */}
                     <div className="text-sm text-muted-foreground">
                         <a
                             href={row.original.site_url}
@@ -216,7 +216,7 @@ const VendorAllOrders = () => {
                             variant="default"
                             size="sm"
                             onClick={() => {
-                                window.location.href = `/websites/buy-link/order-confirmation?orderId=${row.original.id}`;
+                                window.location.href = `/vendor/review-order?orderId=${row.original.id}`;
                             }}
                             className="bg-green-600 hover:bg-green-700"
                         >
@@ -302,7 +302,7 @@ const VendorAllOrders = () => {
         <Card className="w-full">
             <CardHeader>
                 <CardTitle className="text-2xl font-bold text-primary">
-                    New Publisher Orders
+                    Published Orders
                 </CardTitle>
             </CardHeader>
             <CardContent>

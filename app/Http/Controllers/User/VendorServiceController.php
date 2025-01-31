@@ -102,7 +102,20 @@ class VendorServiceController extends Controller
         return view("user.vendor-all-orders");
     }
 
+    public function reviewOrder(Request $request)
+    {
+        $orderId = $request->query('orderId');
 
+        if (!$orderId) {
+            abort(404, 'Order ID not provided.');
+        }
+
+        $order = PublisherOrder::with('site')->findOrFail($orderId);
+
+        // dd($order);
+
+        return view('user.review-order-vendor', compact('order'));
+    }
 
     //API Routes
     // public function getAllWebsites(Request $request)
@@ -157,7 +170,6 @@ class VendorServiceController extends Controller
         // Fetch the orders with the required fields and join with the websites table
         $orders = PublisherOrder::select(
             'publisher_orders.id',
-            'websites.name as site_name',
             'websites.masked_url as site_url',
             'publisher_orders.requested_url',
             'publisher_orders.link_text',
@@ -280,7 +292,7 @@ class VendorServiceController extends Controller
             ->map(function ($website) {
                 return [
                     'id' => $website->id,
-                    'name' => $website->name,
+                    // 'name' => $website->name,
                     'masked_url' => $website->masked_url,
                     'monthly_traffic' => $website->monthly_traffic,
                     'domain_authority' => $website->domain_authority,

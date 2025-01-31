@@ -65,7 +65,6 @@ const WebsitesTable = ({ initialCategories }) => {
                 const website = row.original;
                 return (
                     <div className="space-y-2">
-                        <div className="font-medium">{website.name}</div>
                         <div className="text-sm text-blue-600 hover:text-blue-800 flex items-center gap-1">
                             {website.masked_url} <ExternalLink size={14} />
                         </div>

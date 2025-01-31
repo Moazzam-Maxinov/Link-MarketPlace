@@ -62,7 +62,9 @@ Route::middleware(['auth', 'role:0'])->group(function () {
     Route::get('/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
     Route::get('/publisher/orders/new', [PublisherServiceController::class, 'newPublisherOrders'])->name('user.publisher-new-orders');
     Route::get('/publisher/orders', [PublisherServiceController::class, 'allPublisherOrders'])->name('user.publisher-all-orders');
+    Route::get('/publisher/orders/manage-order', [PublisherServiceController::class, 'manageOrder'])->name('user.manage-order');
     Route::get('/vendor/orders', [VendorServiceController::class, 'allVendorOrders'])->name('user.vendor-all-orders');
+    Route::get('/vendor/review-order', [VendorServiceController::class, 'reviewOrder'])->name('user.review-order');
     Route::get('/websites', [VendorServiceController::class, 'allWebsites'])->name('user.allWebsites');
     Route::get('/websites/buy-link', [VendorServiceController::class, 'buyLink'])->name('user.buyLink');
     Route::post('/websites/buy-link', [VendorServiceController::class, 'placeOrder'])->name('user.placeOrder');
@@ -78,6 +80,8 @@ Route::middleware(['auth', 'role:0'])->group(function () {
     Route::get('/api/vendor/orders', [VendorServiceController::class, 'getAllVendorOrders'])->name('getAllVendorOrders');
     Route::get('/api/getAllWebsites', [VendorServiceController::class, 'getAllWebsites'])->name('getAllWebsites');
     Route::get('/api/getAllCategories', [VendorServiceController::class, 'getAllCategories'])->name('getAllCategories');
+    Route::get('/api/getOrderById', [PublisherServiceController::class, 'getOrderById'])->name('getOrderById');
+    Route::post('/api/publisher/updateOrderStatus', [PublisherServiceController::class, 'updateOrderStatus'])->name('updateOrderStatus');
     // Add other user routes here...
 });
 
