@@ -31,7 +31,7 @@ const PricingTab = () => {
                                 <div>
                                     <p className="text-base bg-white/15 text-white px-2 py-1 rounded-xl inline-block">
                                         <span className="font-semibold">
-                                            $47.04
+                                            $45.04
                                         </span>{" "}
                                         one time
                                     </p>
@@ -39,7 +39,7 @@ const PricingTab = () => {
                                         From
                                     </p>
                                     <p className="text-6xl font-bold text-primary-light mt-2">
-                                        $6.72
+                                        $5.72
                                         <span className="text-xl font-normal">
                                             /Per month
                                         </span>
@@ -51,12 +51,12 @@ const PricingTab = () => {
                                     <div className="flex flex-col gap-y-1">
                                         <p className="flex items-center gap-6 text-white text-xl font-medium">
                                             Index
-                                            <div className="bg-primary p-1 rounded-full">
+                                            <span className="bg-primary p-1 rounded-full">
                                                 <Check
                                                     className="text-white"
                                                     size={18}
                                                 />
-                                            </div>
+                                            </span>
                                         </p>
                                         <p className="text-white text-xl font-medium">
                                             DA 40
@@ -92,7 +92,7 @@ const PricingTab = () => {
                                 <div>
                                     <p className="text-base bg-white/15 text-white px-2 py-1 rounded-xl inline-block">
                                         <span className="font-semibold">
-                                            $52.50
+                                            $50.50
                                         </span>{" "}
                                         one time
                                     </p>
@@ -100,7 +100,7 @@ const PricingTab = () => {
                                         From
                                     </p>
                                     <p className="text-6xl font-bold text-primary-light mt-2">
-                                        $7.50
+                                        $6.50
                                         <span className="text-xl font-normal">
                                             /Per month
                                         </span>
@@ -112,12 +112,12 @@ const PricingTab = () => {
                                     <div className="flex flex-col gap-y-1">
                                         <p className="flex items-center gap-6 text-white text-xl font-medium">
                                             Index
-                                            <div className="bg-primary p-1 rounded-full">
+                                            <span className="bg-primary p-1 rounded-full">
                                                 <Check
                                                     className="text-white"
                                                     size={18}
                                                 />
-                                            </div>
+                                            </span>
                                         </p>
                                         <p className="text-white text-xl font-medium">
                                             DA 50
@@ -153,7 +153,7 @@ const PricingTab = () => {
                                 <div>
                                     <p className="text-base bg-white/15 text-white px-2 py-1 rounded-xl inline-block">
                                         <span className="font-semibold">
-                                            $187.11
+                                            $180.11
                                         </span>{" "}
                                         one time
                                     </p>
@@ -161,7 +161,7 @@ const PricingTab = () => {
                                         From
                                     </p>
                                     <p className="text-6xl font-bold text-primary-light mt-2">
-                                        $26.73
+                                        $25.73
                                         <span className="text-xl font-normal">
                                             /Per month
                                         </span>
@@ -173,12 +173,12 @@ const PricingTab = () => {
                                     <div className="flex flex-col gap-y-1">
                                         <p className="flex items-center gap-6 text-white text-xl font-medium">
                                             Index
-                                            <div className="bg-primary p-1 rounded-full">
+                                            <span className="bg-primary p-1 rounded-full">
                                                 <Check
                                                     className="text-white"
                                                     size={18}
                                                 />
-                                            </div>
+                                            </span>
                                         </p>
                                         <p className="text-white text-xl font-medium">
                                             DA 60
@@ -214,7 +214,7 @@ const PricingTab = () => {
                                 <div>
                                     <p className="text-base bg-white/15 text-white px-2 py-1 rounded-xl inline-block">
                                         <span className="font-semibold">
-                                            $182.84
+                                            $181.84
                                         </span>{" "}
                                         one time
                                     </p>
@@ -222,7 +222,7 @@ const PricingTab = () => {
                                         From
                                     </p>
                                     <p className="text-6xl font-bold text-primary-light mt-2">
-                                        $26.12
+                                        $25.12
                                         <span className="text-xl font-normal">
                                             /Per month
                                         </span>
@@ -234,12 +234,12 @@ const PricingTab = () => {
                                     <div className="flex flex-col gap-y-1">
                                         <p className="flex items-center gap-6 text-white text-xl font-medium">
                                             Index
-                                            <div className="bg-primary p-1 rounded-full">
+                                            <span className="bg-primary p-1 rounded-full">
                                                 <Check
                                                     className="text-white"
                                                     size={18}
                                                 />
-                                            </div>
+                                            </span>
                                         </p>
                                         <p className="text-white text-xl font-medium">
                                             DA 70
@@ -272,7 +272,7 @@ const PricingTab = () => {
                                 <div>
                                     <p className="text-base bg-white/15 text-white px-2 py-1 rounded-xl inline-block">
                                         <span className="font-semibold">
-                                            $220.29
+                                            $215.29
                                         </span>{" "}
                                         one time
                                     </p>
@@ -280,7 +280,7 @@ const PricingTab = () => {
                                         From
                                     </p>
                                     <p className="text-6xl font-bold text-primary-light mt-2">
-                                        $31.47
+                                        $30.47
                                         <span className="text-xl font-normal">
                                             /Per month
                                         </span>
@@ -292,12 +292,12 @@ const PricingTab = () => {
                                     <div className="flex flex-col gap-y-1">
                                         <p className="flex items-center gap-6 text-white text-xl font-medium">
                                             Index
-                                            <div className="bg-primary p-1 rounded-full">
+                                            <span className="bg-primary p-1 rounded-full">
                                                 <Check
                                                     className="text-white"
                                                     size={18}
                                                 />
-                                            </div>
+                                            </span>
                                         </p>
                                         <p className="text-white text-xl font-medium">
                                             DA 80

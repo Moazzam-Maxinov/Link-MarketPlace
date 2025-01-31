@@ -37,7 +37,7 @@ const Home = () => {
                     <div className="w-full md:w-[40%]">
                         <h1 className="text-[2.75rem] md:text-[4rem] font-bold text-primary-dark leading-tight">
                             Buy Backlinks (DA30-60) From <br />
-                            <span className="text-primary">$6.72/Per Link</span>
+                            <span className="text-primary">$5.72/Per Link</span>
                         </h1>
                         <p className="text-primary-neutral text-lg sm:text-xl mt-4 opacity-90">
                             Build your site's authority with high-quality
@@ -353,7 +353,7 @@ const Home = () => {
                     <div className="mt-12 sm:mt-20 max-w-4xl mx-auto">
                         <Accordion
                             type="multiple"
-                            collapsible
+                            collapsible="true"
                             className="w-full space-y-5"
                         >
                             <AccordionItem
