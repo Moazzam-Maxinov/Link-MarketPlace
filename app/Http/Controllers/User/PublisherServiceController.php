@@ -31,6 +31,21 @@ class PublisherServiceController extends Controller
     }
 
 
+    //pending->inprogress->completed(needs to provide published link)->waiting for approval from vendor->if accepted then waiting for payment else if rejected check reason for rejection and again set completed
+    public function manageOrder(Request $request)
+    {
+        $orderId = $request->query('orderId');
+
+        if (!$orderId) {
+            abort(404, 'Order ID not provided.');
+        }
+
+        $order = PublisherOrder::with('site')->findOrFail($orderId);
+
+        return view('user.manage-order', compact('order'));
+    }
+
+
 
     //API endpoints
     public function getNewPublisherOrders()
@@ -149,5 +164,97 @@ class PublisherServiceController extends Controller
             }
         ]
         */
+    }
+
+    public function getOrderById(Request $request)
+    {
+        $userId = Auth::id(); // Get the authenticated user's ID
+
+        // Fetch the orderId from the query parameter
+        $orderId = $request->query('orderId');
+
+        // Fetch the specific order for the authenticated user with the given orderId
+        $order = PublisherOrder::select(
+            'publisher_orders.id',
+            'websites.name as site_name',
+            'websites.url as site_url',
+            'publisher_orders.requested_url',
+            'publisher_orders.link_text',
+            'publisher_orders.price',
+            'publisher_orders.status',
+            'publisher_orders.notes',
+            'publisher_orders.created_at'
+        )
+            ->join('websites', 'publisher_orders.site_id', '=', 'websites.id')
+            ->where([
+                ['publisher_orders.ordered_to', '=', $userId],
+                ['publisher_orders.id', '=', $orderId]
+            ])
+            ->first(); // Fetch only one order
+
+        if ($order) {
+            // Format the created_at field
+            $order->created_at = Carbon::parse($order->created_at)->format('d-m-Y');
+        }
+
+        // Return the order as a JSON response
+        return response()->json($order);
+    }
+
+    public function updateOrderStatus(Request $request)
+    {
+        try {
+            // Validate the incoming request
+            $validatedData = $request->validate([
+                'orderId' => 'required|integer|exists:publisher_orders,id',
+                'status' => 'required|string|in:pending,approved,rejected,completed,inprogress', // Ensure valid status
+                'rejection_reason' => 'nullable|string', // Optional rejection reason
+                'published_link' => 'nullable|url', // Optional published link
+            ]);
+
+            $orderId = $validatedData['orderId'];
+            $newStatus = $validatedData['status'];
+            $rejectionReason = $validatedData['rejection_reason'] ?? null;
+            $publishedLink = $validatedData['published_link'] ?? null;
+
+            // Find the order by ID and ensure it exists
+            $order = PublisherOrder::findOrFail($orderId);
+
+            // Update the status and handle specific scenarios based on status
+            $order->status = $newStatus;
+
+            if ($newStatus == 'completed') {
+                // If status is completed, update the published link and the completed timestamp
+                $order->published_link = $publishedLink;
+                $order->completed_by_publisher_at = now(); // Update the timestamp for completion
+            }
+
+            if ($newStatus == 'rejected') {
+                // If status is rejected, store the rejection reason and update the rejected timestamp
+                $order->rejected_by_publisher_reason = $rejectionReason;
+                $order->rejected_at = now(); // Update the timestamp for rejection
+            }
+
+            // Save the order with the updated status and additional fields
+            $order->save();
+
+            // Return a success response with the updated order details
+            return response()->json([
+                'success' => true,
+                'message' => 'Order status updated successfully',
+                'order' => $order
+            ], 200);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Invalid data provided',
+                'errors' => $e->errors()
+            ], 422);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => $e->getMessage()
+            ], 500);
+        }
     }
 }

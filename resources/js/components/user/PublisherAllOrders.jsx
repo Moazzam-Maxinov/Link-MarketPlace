@@ -202,25 +202,14 @@ const PublisherAllOrders = () => {
             header: "Actions",
             cell: ({ row }) => (
                 <div className="flex justify-center">
-                    {row.original.status.toLowerCase() === "inprogress" ? (
-                        <Button
-                            variant="default"
-                            size="sm"
-                            onClick={() => {}}
-                            className="bg-blue-600 hover:bg-blue-700"
-                        >
-                            Manage Order
-                        </Button>
-                    ) : (
-                        <Button
-                            variant="default"
-                            size="sm"
-                            onClick={() => {}}
-                            className="bg-green-600 hover:bg-green-700"
-                        >
-                            Review Order
-                        </Button>
-                    )}
+                    <a
+                        variant="default"
+                        size="sm"
+                        href={`/publisher/orders/manage-order?orderId=${row.original.id}`}
+                        className="bg-blue-600 hover:bg-blue-700"
+                    >
+                        Manage Orders
+                    </a>
                 </div>
             ),
         },
